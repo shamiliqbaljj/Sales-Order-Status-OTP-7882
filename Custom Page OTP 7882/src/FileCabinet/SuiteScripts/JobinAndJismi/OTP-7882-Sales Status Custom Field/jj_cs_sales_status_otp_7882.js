@@ -40,7 +40,7 @@ define(['N/record', 'N/search'],
          * @since 2015.2
          */
         function pageInit(scriptContext) {
-     
+    
             let cur = scriptContext.currentRecord;
            
      
@@ -87,7 +87,11 @@ define(['N/record', 'N/search'],
                 var internalId = result.getValue({ name: 'internalid'});
      
                 var subTotal = total-taxTotal;
-       
+
+                if (!taxTotal)
+                    {
+                        taxTotal = 0;
+                    }
      
                 cur.selectLine({
                     sublistId: 'salessublist',
@@ -278,6 +282,12 @@ define(['N/record', 'N/search'],
                 var internalId = result.getValue({ name: 'internalid'});
      
                 var subTotal = total-taxTotal;
+
+
+                if (!taxTotal)
+                    {
+                        taxTotal = 0;
+                    }
        
      
                 cur.selectLine({
