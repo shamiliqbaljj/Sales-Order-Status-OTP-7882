@@ -1,17 +1,23 @@
 /**
  * 
  * 
+ * Client : Nill
  * 
  * OTP 7882 - Custom page for display sales order based on the status
  * 
  * 
- * ------------------------------------------------------------------------
+ * *************************************************************************************
+ * ***
  * 
  * Author : Jobin And Jismi IT Services
  * 
  * Date Created : 09 - September - 2024
  * 
- * Description : This script is for creating a Custom page for displaying sales order based on the status
+ * Description : This script is for populating a Custom page for displaying sales order based on the status. The
+ *               form is devoloped using Suitelet
+ * 
+ * 
+ * REVISION HISTORY : 1.0
  * 
  * 
  * 
@@ -47,31 +53,39 @@ define(['N/record', 'N/search', 'N/ui/serverWidget'],
         }
         catch(error)
         {
-            log.debug(error);
+            log.error(error);
         }
         }
+
+        
+
+       
+
+        return { onRequest: onRequest };
+
+
 
         /**
          * Creates the Suitelet form.
          * @returns {ServerForm} The form object
          */
         function createForm() {
-        try{
-            return serverWidget.createForm({
-                title: 'Sales Order Form',
-            });
-        }
-        catch(error)
-        {
-            log.debug(error);
-        }
-        }
+            try{
+                return serverWidget.createForm({
+                    title: 'Sales Order Form',
+                });
+            }
+            catch(error)
+            {
+                log.error(error);
+            }
+            }
 
-        /**
+         /**
          * Adds fields to the form.
          * @param {ServerForm} form - The form object to which fields are added
          */
-        function addFieldsToForm(form) {
+         function addFieldsToForm(form) {
             try{
             var statusField = form.addField({
                 id: 'custpage_statusfield',
@@ -106,7 +120,7 @@ define(['N/record', 'N/search', 'N/ui/serverWidget'],
         }
         catch(error)
         {
-            log.debug(error);
+            log.error(error);
         }
         }
 
@@ -151,7 +165,7 @@ define(['N/record', 'N/search', 'N/ui/serverWidget'],
         }
         catch(error)
         {
-            log.debug(error);
+            log.error(error);
         }
     }
 
@@ -228,10 +242,8 @@ define(['N/record', 'N/search', 'N/ui/serverWidget'],
         }
         catch(error)
         {
-            log.debug(error);
+            log.error(error);
         }
     }
-
-        return { onRequest: onRequest };
     }
 );
