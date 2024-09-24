@@ -1,0 +1,10 @@
+<clientscript scriptid="customscript16">
+  <description></description>
+  <isinactive>F</isinactive>
+  <name>JJ UE Sales Status 001 OTP-7882</name>
+  <notifyadmins>F</notifyadmins>
+  <notifyemails></notifyemails>
+  <notifyowner>T</notifyowner>
+  <notifyuser>F</notifyuser>
+  <scriptfile>[/SuiteScripts/JobinAndJismi/OTP-7544-InductionTraining/jj_cs_sales_status_otp_7882.js]</scriptfile>
+</clientscript>
